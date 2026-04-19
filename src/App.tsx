@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
-import { WhatsNewSection } from './components/WhatsNewSection';
 import { AttractionsSection } from './components/AttractionsSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { FoodDiningSection } from './components/FoodDiningSection';
@@ -76,7 +75,6 @@ export default function App() {
       <ChatWidget />
       <main>
         <HeroSection data={heroData} highlights={highlights} />
-        <WhatsNewSection />
         <AboutSection />
         
         {/* Business Strategic Layer */}

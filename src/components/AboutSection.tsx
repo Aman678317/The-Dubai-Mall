@@ -10,17 +10,25 @@ export const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="relative h-[600px] overflow-hidden group"
+          className="relative group"
         >
           <div className="absolute top-5 left-5 right-[-20px] bottom-[-20px] border border-luxury-gold/30 z-0 pointer-events-none"></div>
-          <div className="w-full h-full relative z-10 overflow-hidden">
-            <img 
-              src="https://images.openai.com/static-rsc-4/LJOw6BWeEJLe9udsHUwLV4zDtIKHpGZtFbAYyqVOLt7QuCsXwgTTfrr_eqkvjCllE4ZyK1sBX-ZMhgDGgnOQEM1WQ6oq4KseM9eGipGnMXAzvfmESic0-ppfMD8uV4Z-OD9j4gg8wiXjqRQw6pc7vH-eJF_dS6gsXlR1an_pw1noe1SfOQy0ZgmUpTq5PdGj?purpose=fullsize" 
-              alt="Dubai Mall Interior" 
-              className="w-full h-full object-cover transition-transform duration-[1.2s] ease-[0.25,0.46,0.45,0.94] group-hover:scale-110"
-              referrerPolicy="no-referrer"
-            />
+          
+          <div className="w-full h-[600px] relative z-10 overflow-hidden bg-black">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/H1VaXyx3XVc?si=-H6HBToUtT6yQ3Pf&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=H1VaXyx3XVc" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="absolute inset-0 w-full h-full object-cover scale-[1.15] pointer-events-none"
+            ></iframe>
+            <div className="absolute inset-0 bg-luxury-black/30 pointer-events-none mix-blend-overlay"></div>
           </div>
+          
           <div className="grid grid-cols-2 gap-px mt-8 bg-luxury-gold/15 border border-luxury-gold/15 relative z-10 w-full mb-8">
             <div className="p-6 bg-luxury-dark text-center">
               <span className="font-display text-4xl font-bold text-luxury-gold">1,200+</span>

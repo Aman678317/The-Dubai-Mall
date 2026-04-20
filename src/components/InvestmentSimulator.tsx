@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Calculator, Zap, TrendingUp, BarChart3 } from 'lucide-react';
+import { YouTubeBackground } from './YouTubeBackground';
 
 type BusinessType = 'luxury' | 'boutique' | 'fb' | 'entertainment';
 
@@ -128,18 +129,10 @@ export const InvestmentSimulator = () => {
             <p className="text-white/40 italic mb-10 text-lg">Select your business category to see our tailored projection.</p>
             
             <div className="w-full max-w-4xl aspect-video rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
-              <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/xshkQS54Eww?si=wVEEqjmfffQVnerJ&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=xshkQS54Eww" 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerPolicy="strict-origin-when-cross-origin" 
-                allowFullScreen
-                className="absolute inset-0 w-full h-full object-cover scale-105 pointer-events-none"
-              ></iframe>
-              <div className="absolute inset-0 bg-luxury-black/40 pointer-events-none mix-blend-overlay"></div>
+              <div className="absolute inset-0 z-0 bg-luxury-black">
+                <YouTubeBackground videoId="Ue9PynKcRvA" overlayOpacity={0.4} />
+              </div>
+              <div className="absolute inset-0 bg-luxury-black/20 pointer-events-none mix-blend-overlay z-10"></div>
             </div>
           </motion.div>
         )}

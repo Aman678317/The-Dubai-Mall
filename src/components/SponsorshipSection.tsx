@@ -7,7 +7,7 @@ export const SponsorshipSection = () => {
   return (
     <section id="sponsorship" className="relative py-32 bg-luxury-dark2 overflow-hidden border-t border-luxury-gold/5">
       <div className="absolute inset-0 z-0 bg-black pointer-events-none">
-        <YouTubeBackground videoId="eDQbtkv94fM" overlayOpacity={0.8} />
+        <YouTubeBackground videoId="BOG_CbEDhag" overlayOpacity={0.8} />
         <div className="absolute inset-0 bg-gradient-to-t from-luxury-dark2 via-luxury-dark2/80 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-dark2 via-transparent to-transparent"></div>
       </div>

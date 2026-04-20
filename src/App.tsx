@@ -14,6 +14,7 @@ import { ChatWidget } from './components/ChatWidget';
 import { InvestmentSimulator } from './components/InvestmentSimulator';
 import { EventsSection } from './components/EventsSection';
 import { SponsorshipSection } from './components/SponsorshipSection';
+import { YouTubeBackground } from './components/YouTubeBackground';
 import { motion } from 'motion/react';
 
 export default function App() {
@@ -133,8 +134,13 @@ export default function App() {
         <AboutSection />
         
         {/* Business Strategic Layer */}
-        <section className="py-24 bg-luxury-dark border-y border-luxury-gold/10">
-          <div className="max-w-[1300px] mx-auto px-6">
+        <section className="py-24 bg-luxury-dark border-y border-luxury-gold/10 relative overflow-hidden">
+          <div className="absolute inset-0 z-0 bg-black pointer-events-none">
+             <YouTubeBackground videoId="BOG_CbEDhag" overlayOpacity={0.8} />
+             <div className="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/80 to-transparent"></div>
+             <div className="absolute inset-0 bg-gradient-to-b from-luxury-dark via-transparent to-transparent"></div>
+          </div>
+          <div className="max-w-[1300px] mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}

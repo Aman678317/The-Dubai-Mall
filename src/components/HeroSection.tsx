@@ -28,7 +28,7 @@ export const HeroSection = ({ data, highlights }: HeroSectionProps) => {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden w-full">
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <YouTubeBackground videoId="BOG_CbEDhag" startTime={0} overlayOpacity={0.65} />
+        <YouTubeBackground videoId="Rjf5BFxiOKA" startTime={0} overlayOpacity={0.65} />
       </div>
       
       <div className="relative z-20 text-center px-6 max-w-[1200px] mx-auto flex flex-col items-center mt-12">
@@ -130,7 +130,7 @@ export const HeroSection = ({ data, highlights }: HeroSectionProps) => {
               <iframe 
                   width="100%" 
                   height="100%" 
-                  src="https://www.youtube.com/embed/BOG_CbEDhag?si=2Bm9f_GD7TnoOL8H&autoplay=1" 
+                  src="https://www.youtube.com/embed/Rjf5BFxiOKA?si=2Bm9f_GD7TnoOL8H&autoplay=1" 
                   title="YouTube video player" 
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 

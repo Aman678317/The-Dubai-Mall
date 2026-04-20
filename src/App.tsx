@@ -141,37 +141,18 @@ export default function App() {
              <div className="absolute inset-0 bg-gradient-to-b from-luxury-dark via-transparent to-transparent"></div>
           </div>
           <div className="max-w-[1300px] mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-center">
+            <div className="max-w-4xl mx-auto text-center mb-20 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: "easeOut" }}
               >
                 <p className="text-[10px] tracking-[0.45em] text-luxury-gold mb-4 font-bold uppercase">◈ Global Business Opportunities</p>
                 <h2 className="text-4xl md:text-5xl font-display mb-8 font-light italic">Market <span className="text-luxury-gold">Potential</span> & Projections</h2>
-                <p className="text-luxury-muted max-w-2xl font-light leading-relaxed mb-8">
+                <p className="text-luxury-muted font-light leading-relaxed mb-8 text-lg mx-auto">
                   Connect your brand to the world's most influential audience. Use our simulator to explore growth potentials across our premier commercial districts.
                 </p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                className="w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10"
-              >
-                <iframe 
-                  width="100%" 
-                  height="100%" 
-                  src="https://www.youtube.com/embed/mrRwtGZ-qA0?si=VSalOqKQq1I_nRZQ&autoplay=0" 
-                  title="YouTube video player" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  referrerPolicy="strict-origin-when-cross-origin" 
-                  allowFullScreen
-                />
               </motion.div>
             </div>
             

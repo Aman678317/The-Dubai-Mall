@@ -1,10 +1,16 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Star, Award, Crown } from 'lucide-react';
+import { YouTubeBackground } from './YouTubeBackground';
 
 export const SponsorshipSection = () => {
   return (
     <section id="sponsorship" className="relative py-32 bg-luxury-dark2 overflow-hidden border-t border-luxury-gold/5">
+      <div className="absolute inset-0 z-0 bg-black pointer-events-none">
+        <YouTubeBackground videoId="eDQbtkv94fM" overlayOpacity={0.8} />
+        <div className="absolute inset-0 bg-gradient-to-t from-luxury-dark2 via-luxury-dark2/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-luxury-dark2 via-transparent to-transparent"></div>
+      </div>
       <div className="max-w-[1300px] mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.p 
@@ -63,12 +69,12 @@ export const SponsorshipSection = () => {
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center mt-12">
             <button 
                 onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-12 py-5 bg-transparent border border-luxury-gold text-luxury-gold font-sans font-bold uppercase tracking-[0.2em] text-[0.75rem] hover:bg-luxury-gold hover:text-black transition-all"
+                className="inline-block bg-luxury-black border border-luxury-gold text-luxury-gold px-12 py-5 font-sans text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-luxury-gold hover:text-luxury-black"
             >
-                Partner With Us
+                Explore Partnerships
             </button>
         </div>
       </div>

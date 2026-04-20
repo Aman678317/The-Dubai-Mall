@@ -11,6 +11,7 @@ export const VisitorInfoMapSection = () => {
           <img 
               src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&q=80" 
               alt="Dubai Mall Corridors" 
+              loading="lazy"
               className="w-full h-full object-cover opacity-60" 
               referrerPolicy="no-referrer"
           />
@@ -86,6 +87,7 @@ export const VisitorInfoMapSection = () => {
                <img 
                  src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1600&q=80" 
                  alt="Guest Services" 
+                 loading="lazy"
                  className="w-full h-full object-cover"
                />
                <div className="absolute inset-0 bg-luxury-gold/10 mix-blend-overlay"></div>

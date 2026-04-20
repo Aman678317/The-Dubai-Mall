@@ -46,6 +46,7 @@ export const CallToActionSection = () => {
         <img 
             src="https://images.openai.com/static-rsc-4/Jklz7fo0BQOB-4wqbueGJb750xafulRYGpFRiYI1MipqW1v1R9_lTWnh_De8PhY9gZ2t4fiO9Un7yUotkD2-HOAmgRdLPXHtzYaAke3oTj9RBFnXpJt36zdcPJtp_Y7lZkaiIZ-cT4QOoRDOVieM_dqcLcK77s7j5QoYAy_nPkQxz7wB3XiFSe8WerAxTJN0?purpose=fullsize" 
             alt="Dubai Skyline" 
+            loading="lazy"
             className="w-full h-full object-cover" 
             referrerPolicy="no-referrer"
         />

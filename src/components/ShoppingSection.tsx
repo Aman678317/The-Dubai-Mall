@@ -43,6 +43,7 @@ export const ShoppingSection = () => {
               <img 
                 src={item.img} 
                 alt={item.name}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
@@ -57,6 +58,19 @@ export const ShoppingSection = () => {
             </motion.div>
           ))}
         </div>
+      </div>
+
+      <div className="max-w-[1300px] mx-auto px-6 mt-12 flex justify-center">
+        <motion.a 
+          href="#cta"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="inline-block bg-luxury-black border border-luxury-gold text-luxury-gold px-12 py-5 font-sans text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-luxury-gold hover:text-luxury-black"
+        >
+          Inquire About Leasing
+        </motion.a>
       </div>
     </section>
   );

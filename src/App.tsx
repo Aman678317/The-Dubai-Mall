@@ -7,7 +7,6 @@ import { ExperienceSection } from './components/ExperienceSection';
 import { FoodDiningSection } from './components/FoodDiningSection';
 import { ShoppingSection } from './components/ShoppingSection';
 import { VisitorInfoMapSection } from './components/VisitorInfoMapSection';
-import { AiStudioSection } from './components/AiStudioSection';
 import { CallToActionSection } from './components/CallToActionSection';
 import { Footer } from './components/Footer';
 import { SearchOverlay } from './components/SearchOverlay';
@@ -22,6 +21,7 @@ export default function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [sections, setSections] = useState<any[]>([]);
   const [highlights, setHighlights] = useState<any>(null);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +41,30 @@ export default function App() {
 
     fetchData();
 
+    // Intersection Observer for Active Section
+    const observers: IntersectionObserver[] = [];
+    const sectionIds = ['hero', 'about', 'shopping', 'experience', 'dining', 'attractions', 'events', 'sponsorship', 'cta'];
+    
+    setTimeout(() => {
+      sectionIds.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  setActiveSection(id);
+                }
+              });
+            },
+            { threshold: 0.3 }
+          );
+          observer.observe(element);
+          observers.push(observer);
+        }
+      });
+    }, 500); // Give elements time to mount
+
     // Global Search Shortcut
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -54,6 +78,7 @@ export default function App() {
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      observers.forEach(obs => obs.disconnect());
     };
   }, []);
 
@@ -78,20 +103,21 @@ export default function App() {
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-4 items-center">
          {[
            { id: 'hero', label: 'Start' },
-           { id: 'about', label: 'Story' },
+           { id: 'about', label: 'Overview' },
            { id: 'shopping', label: 'Retail' },
-           { id: 'attractions', label: 'Attractions' },
+           { id: 'experience', label: 'Luxury' },
            { id: 'dining', label: 'Dining' },
+           { id: 'attractions', label: 'Entertainment' },
            { id: 'events', label: 'Events' },
-           { id: 'sponsorship', label: 'Sponsor' },
-           { id: 'cta', label: 'Partner' }
+           { id: 'sponsorship', label: 'Sponsorship' },
+           { id: 'cta', label: 'Contact' }
          ].map(dot => (
            <button 
              key={dot.id}
              onClick={() => document.getElementById(dot.id)?.scrollIntoView({ behavior: 'smooth' })}
-             className="w-2 h-2 rounded-full bg-white/20 hover:bg-luxury-gold transition-colors relative group"
+             className={`w-2 h-2 rounded-full transition-colors relative group ${activeSection === dot.id ? 'bg-luxury-gold scale-125' : 'bg-white/20 hover:bg-luxury-gold'}`}
            >
-             <span className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] uppercase tracking-widest text-luxury-gold whitespace-nowrap hidden group-hover:block px-2 py-1 bg-black/80 rounded">
+             <span className={`absolute right-6 top-1/2 -translate-y-1/2 transition-opacity text-[10px] uppercase tracking-widest text-luxury-gold whitespace-nowrap px-2 py-1 bg-black/80 rounded ${activeSection === dot.id ? 'opacity-100 block' : 'opacity-0 hidden group-hover:block group-hover:opacity-100'}`}>
                {dot.label}
              </span>
            </button>

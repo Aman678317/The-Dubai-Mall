@@ -62,14 +62,14 @@ export const ExperienceSection = ({ data }: ExperienceSectionProps) => {
           </motion.p>
 
           <motion.a 
-            href="#dining"
+            href="#cta"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="inline-block bg-transparent border border-luxury-gold text-luxury-gold px-11 py-4 font-sans text-xs font-bold tracking-[0.2em] uppercase transition-all hover:-translate-y-0.5 hover:bg-luxury-gold hover:text-black"
+            className="inline-block bg-luxury-black border border-luxury-gold text-luxury-gold px-12 py-5 font-sans text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-luxury-gold hover:text-luxury-black"
           >
-            Continue the Journey
+            Request Flagship Information
           </motion.a>
         </motion.div>
       </div>

@@ -15,17 +15,18 @@ export const Navbar = ({ onSearchOpen }: { onSearchOpen: () => void }) => {
   }, []);
 
   const navLinks = [
-    { name: "What's New", href: '#whats-new' },
-    { name: 'Shop', href: '#shopping' },
-    { name: 'Dine', href: '#dining' },
-    { name: 'Stay', href: '#experience' },
-    { name: 'Entertain', href: '#attractions' },
-    { name: 'Plan Your Visit', href: '#cta' },
-    { name: 'Services', href: '#services' }
+    { name: 'Overview', href: '#about' },
+    { name: 'Retail', href: '#shopping' },
+    { name: 'Luxury', href: '#experience' },
+    { name: 'Dining', href: '#dining' },
+    { name: 'Entertainment', href: '#attractions' },
+    { name: 'Events', href: '#events' },
+    { name: 'Sponsorship', href: '#sponsorship' },
+    { name: 'Contact', href: '#cta' }
   ];
 
   const subNavLinks = [
-    "Fashion avenue", "Fountain views", "Chinatown", "Souk Al Bahar", "Offers", "Events", "Exhibition Center"
+    "Flagship Leasing", "Pop-up Activations", "Media Booking", "Concierge Services", "Brand Partnerships", "Global Sales Team"
   ];
 
   return (

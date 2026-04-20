@@ -70,9 +70,10 @@ export const AttractionsSection = () => {
               className="group relative h-[600px] overflow-hidden cursor-pointer rounded-sm"
             >
               <motion.div className="w-full h-[120%] absolute top-[-10%]" style={{ y: parallaxY }}>
-                 <img 
+               <img 
                    src={attr.image} 
                    alt={attr.title}
+                   loading="lazy"
                    className="w-full h-full object-cover transition-transform duration-[800ms] ease-[0.25,0.46,0.45,0.94] group-hover:scale-[1.05]"
                    referrerPolicy="no-referrer"
                  />

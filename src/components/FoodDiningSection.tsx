@@ -66,6 +66,7 @@ export const FoodDiningSection = () => {
               <img 
                 src={item.img} 
                 alt={item.title} 
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-[0.25,0.46,0.45,0.94] group-hover:scale-110 opacity-60 group-hover:opacity-100"
                 referrerPolicy="no-referrer"
               />

@@ -1,18 +1,18 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Raleway:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
 @theme {
-  --font-sans: "Raleway", sans-serif;
-  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Playfair Display", serif;
   
-  --color-luxury-gold: #C9A84C;
-  --color-luxury-gold-light: #E8C96B;
-  --color-luxury-gold-dark: #9B7E3A;
+  --color-luxury-gold: #c9a84c;
+  --color-luxury-gold-light: #e8c96b;
+  --color-luxury-gold-dark: #9b7e3a;
   --color-luxury-black: #0a0a0a;
   --color-luxury-dark: #111111;
   --color-luxury-dark2: #1a1a1a;
-  --color-luxury-cream: #F9F5EE;
-  --color-luxury-muted: rgba(249, 245, 238, 0.6);
+  --color-luxury-cream: #f5f0eb;
+  --color-luxury-muted: rgba(245, 240, 235, 0.6);
 }
 
 :root {

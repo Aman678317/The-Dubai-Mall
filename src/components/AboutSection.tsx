@@ -35,7 +35,7 @@ export const AboutSection = () => {
               <div className="text-[10px] tracking-[0.2em] uppercase text-luxury-muted mt-1">Retail Stores</div>
             </div>
             <div className="p-6 bg-luxury-dark text-center">
-              <span className="font-display text-4xl font-bold text-luxury-gold">80M+</span>
+              <span className="font-display text-4xl font-bold text-luxury-gold">100M+</span>
               <div className="text-[10px] tracking-[0.2em] uppercase text-luxury-muted mt-1">Annual Visitors</div>
             </div>
           </div>

@@ -13,6 +13,8 @@ import { Footer } from './components/Footer';
 import { SearchOverlay } from './components/SearchOverlay';
 import { ChatWidget } from './components/ChatWidget';
 import { InvestmentSimulator } from './components/InvestmentSimulator';
+import { EventsSection } from './components/EventsSection';
+import { SponsorshipSection } from './components/SponsorshipSection';
 import { motion } from 'motion/react';
 
 export default function App() {
@@ -71,8 +73,35 @@ export default function App() {
   return (
     <div className="bg-luxury-black min-h-screen text-luxury-cream">
       <Navbar onSearchOpen={() => setIsSearchOpen(true)} />
+      
+      {/* Floating Side Deck Navigation */}
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-4 items-center">
+         {[
+           { id: 'hero', label: 'Start' },
+           { id: 'about', label: 'Story' },
+           { id: 'shopping', label: 'Retail' },
+           { id: 'attractions', label: 'Attractions' },
+           { id: 'dining', label: 'Dining' },
+           { id: 'events', label: 'Events' },
+           { id: 'sponsorship', label: 'Sponsor' },
+           { id: 'cta', label: 'Partner' }
+         ].map(dot => (
+           <button 
+             key={dot.id}
+             onClick={() => document.getElementById(dot.id)?.scrollIntoView({ behavior: 'smooth' })}
+             className="w-2 h-2 rounded-full bg-white/20 hover:bg-luxury-gold transition-colors relative group"
+           >
+             <span className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] uppercase tracking-widest text-luxury-gold whitespace-nowrap hidden group-hover:block px-2 py-1 bg-black/80 rounded">
+               {dot.label}
+             </span>
+           </button>
+         ))}
+         <div className="w-px h-16 bg-white/10 mt-4 hidden xl:block"></div>
+      </div>
+
       <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
       <ChatWidget />
+      
       <main>
         <HeroSection data={heroData} highlights={highlights} />
         <AboutSection />
@@ -118,12 +147,14 @@ export default function App() {
           </div>
         </section>
 
+        <ShoppingSection />
         <AttractionsSection />
         <ExperienceSection data={experienceData} />
         <FoodDiningSection />
-        <ShoppingSection />
+        <EventsSection />
+        <SponsorshipSection />
         <VisitorInfoMapSection />
-        <AiStudioSection />
+        
         <CallToActionSection />
       </main>
       <Footer />

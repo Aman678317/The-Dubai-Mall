@@ -21,8 +21,8 @@ export const HeroSection = ({ data, highlights }: HeroSectionProps) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   
   // Hard override per user request to remove "Dubai Mall: The Global Landmark" mapping
-  const headline = "The Dubai Mall";
-  const subtext = data?.subtext || "Discover the world's largest shopping and entertainment destination — where luxury, wonder, and elegance converge.";
+  const headline = "More Than a Mall. A Global Destination.";
+  const subtext = "100M+ visitors. World-class retail. Limitless opportunity.";
   const fallbackImage = "https://images.openai.com/static-rsc-4/j99_Ch5UhMFo0Wo1kbjlu0wuB9sa17JgsE8663Pt753pWxDY20ZG3j1sBthe-jShE5v5UBlX-_Pffey-UNGrucsKax1bQIH5OXwZsRCnmEtBLyBYUJmjnByPLXQgVAUSZyIAsmRD5ohSufCDjNNwX6ENYOvEcG8vJaYXtC-tMKluMImxWowmzbLQkPPKlK9_?purpose=fullsize";
 
   return (
@@ -31,28 +31,28 @@ export const HeroSection = ({ data, highlights }: HeroSectionProps) => {
         <YouTubeBackground videoId="Rjf5BFxiOKA" startTime={0} overlayOpacity={0.65} />
       </div>
       
-      <div className="relative z-20 text-center px-6 max-w-[1000px] mx-auto flex flex-col items-center mt-12">
+      <div className="relative z-20 text-center px-6 max-w-[1200px] mx-auto flex flex-col items-center mt-12">
         <motion.p 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-luxury-gold mb-6"
+          className="text-[0.75rem] font-semibold tracking-[0.5em] uppercase text-luxury-gold mb-6"
         >
           ◈ World's Premier Destination ◈
         </motion.p>
         <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-5xl md:text-7xl lg:text-[6.5rem] font-display mb-8 tracking-[-0.01em] font-light leading-[1.1]"
-          dangerouslySetInnerHTML={{ __html: headline.replace(/Dubai Mall/i, '<em className="italic font-light text-luxury-gold bg-transparent">Dubai Mall</em>') }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-5xl md:text-7xl lg:text-[5.5rem] font-display mb-8 tracking-[-0.01em] font-light leading-[1.1]"
+          dangerouslySetInnerHTML={{ __html: headline.replace(/Global Destination/i, '<em className="italic font-light text-luxury-gold bg-transparent">Global Destination</em>') }}
         />
         
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-base md:text-lg text-luxury-muted font-light mb-12 max-w-[640px] leading-[1.8] tracking-[0.05em]"
+          transition={{ duration: 1, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-lg md:text-xl text-luxury-muted font-light mb-12 max-w-[700px] leading-[1.8] tracking-[0.05em]"
         >
           {subtext}
         </motion.p>
@@ -60,24 +60,21 @@ export const HeroSection = ({ data, highlights }: HeroSectionProps) => {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 1, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="flex flex-wrap gap-6 justify-center items-center mb-16"
         >
           <button 
-            className="px-11 py-4 bg-luxury-gold text-luxury-black font-sans font-bold uppercase tracking-[0.2em] text-[0.75rem] hover:bg-luxury-gold-light hover:-translate-y-0.5 transition-all inline-block border-none"
-            onClick={() => document.getElementById('attractions')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-10 py-4 bg-luxury-gold text-luxury-black font-sans font-bold uppercase tracking-[0.2em] text-[0.75rem] hover:bg-luxury-gold-light hover:-translate-y-0.5 transition-all inline-block border-none"
+            onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Explore Now
+            Explore Opportunities
           </button>
           
           <button 
-            className="flex items-center gap-3 text-luxury-cream uppercase tracking-[0.2em] text-[0.75rem] font-bold hover:text-luxury-gold transition-colors px-4 py-3"
-            onClick={() => setIsVideoOpen(true)}
+            className="flex items-center gap-3 text-luxury-cream border border-luxury-cream/30 hover:border-luxury-gold hover:text-luxury-gold px-10 py-4 uppercase tracking-[0.2em] text-[0.75rem] font-bold transition-all hover:-translate-y-0.5"
+            onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <span className="flex items-center justify-center w-10 h-10 rounded-full border border-luxury-cream/40 hover:border-luxury-gold transition-all relative">
-              <Play size={14} className="ml-1 fill-current" />
-            </span>
-            Watch The Film
+            Book a Venue
           </button>
         </motion.div>
 

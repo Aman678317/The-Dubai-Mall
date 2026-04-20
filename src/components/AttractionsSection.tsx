@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 
 const attractions = [
   {
@@ -20,10 +20,18 @@ const attractions = [
 ];
 
 export const AttractionsSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const parallaxY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+
   return (
-    <section id="attractions" className="relative py-24 bg-luxury-black overflow-hidden border-t border-luxury-gold/5">
+    <section id="attractions" ref={containerRef} className="relative py-32 bg-luxury-black overflow-hidden border-t border-luxury-gold/5">
       <div className="max-w-[1400px] mx-auto px-0 md:px-6 relative z-10">
-        <div className="text-center md:text-left mb-16 px-6 md:px-0 max-w-[600px]">
+        <div className="text-center md:text-left mb-16 px-6 md:px-0 max-w-[800px]">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +48,7 @@ export const AttractionsSection = () => {
             transition={{ delay: 0.1, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="text-4xl md:text-6xl font-display font-light leading-tight mb-6"
           >
-            Signature <em className="italic text-luxury-gold bg-transparent">Attractions</em>
+            Where the world comes to <em className="italic text-luxury-gold bg-transparent font-light">experience</em>
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, scaleX: 0 }}
@@ -51,7 +59,7 @@ export const AttractionsSection = () => {
           ></motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 max-w-[1400px] mx-auto bg-luxury-dark2 border-y border-luxury-dark2 md:border md:border-luxury-dark2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-4 max-w-[1400px] mx-auto md:px-4">
           {attractions.map((attr, idx) => (
             <motion.div
               key={idx}
@@ -59,20 +67,23 @@ export const AttractionsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.9, delay: idx * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="group relative h-[550px] overflow-hidden cursor-pointer"
+              className="group relative h-[600px] overflow-hidden cursor-pointer rounded-sm"
             >
-              <img 
-                src={attr.image} 
-                alt={attr.title}
-                className="w-full h-full object-cover transition-transform duration-[800ms] ease-[0.25,0.46,0.45,0.94] group-hover:scale-110"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent z-10 transition-opacity duration-400 opacity-100 group-hover:opacity-85"></div>
+              <motion.div className="w-full h-[120%] absolute top-[-10%]" style={{ y: parallaxY }}>
+                 <img 
+                   src={attr.image} 
+                   alt={attr.title}
+                   className="w-full h-full object-cover transition-transform duration-[800ms] ease-[0.25,0.46,0.45,0.94] group-hover:scale-[1.05]"
+                   referrerPolicy="no-referrer"
+                 />
+              </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 transition-opacity duration-400 opacity-90 group-hover:opacity-100"></div>
+              <div className="absolute inset-0 border border-white/5 z-20 pointer-events-none group-hover:border-luxury-gold/30 transition-colors duration-500"></div>
               
               <div className="absolute bottom-0 left-0 right-0 p-10 z-20 translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
                 <div className="text-[0.65rem] tracking-[0.4em] text-luxury-gold font-bold uppercase mb-3">0{idx + 1}</div>
                 <h3 className="text-3xl font-display mb-3 text-luxury-cream font-light">{attr.title}</h3>
-                <p className="text-luxury-muted font-light text-[0.9rem] leading-[1.7] opacity-0 translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400 delay-100">
+                <p className="text-luxury-muted font-light text-[0.9rem] leading-[1.7] opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400 delay-100">
                   {attr.description}
                 </p>
                 <div className="inline-flex items-center gap-2 text-[0.7rem] tracking-[0.2em] uppercase text-luxury-gold mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-150 font-bold">

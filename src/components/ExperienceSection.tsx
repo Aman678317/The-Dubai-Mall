@@ -11,25 +11,25 @@ interface ExperienceSectionProps {
 }
 
 export const ExperienceSection = ({ data }: ExperienceSectionProps) => {
-  const title = data?.title || "The Dubai Fountain";
-  const headline = data?.headline || "An Unforgettable Experience, Every Single Time.";
-  const subtext = data?.subtext || "From luxury shopping to breathtaking fountain shows set against the Burj Khalifa, The Dubai Mall offers a unique blend of entertainment, culture, and elegance that simply cannot be replicated anywhere else in the world.";
-  const imageUrl = data?.media?.url || "https://images.openai.com/static-rsc-4/hRb8HHtI8IftgeIN6lMILirAoevUv-b2aLl2XiE9lCsphHkY5lanYx4ABDld-Mq4pSlGYG6LdiasrMzALFDQiMPEtQg9rJTJbRXDWVOAequnqRqolOdqFUkKNwzJKiYrOdQzvHLymI8Lpj7Qzt3N9l7_WfheH38ht_RoAvnl7yBI5Urx92hFM23f42K2Y8dD?purpose=fullsize";
+  // Hard override for The Couture Collection
+  const title = "The Couture Collection";
+  const headline = "A Tapestry of Elegance and Exclusivity.";
+  const subtext = "Discover fashion's most revered houses. The Couture Collection brings together the pinnacle of luxury, exquisite craftsmanship, and bespoke services, creating a sanctuary for true connoisseurs of style.";
 
   return (
-    <section id="experience" className="relative min-h-[90vh] flex items-center overflow-hidden py-0">
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <motion.img 
-            initial={{ scale: 1.05 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 10, ease: "easeOut" }}
-            viewport={{ once: true }}
-            src={imageUrl} 
-            alt="Experience Lifestyle" 
-            className="w-full h-full object-cover" 
-            referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-luxury-black/90 via-luxury-black/60 to-transparent pointer-events-none" />
+    <section id="experience" className="relative min-h-[90vh] flex items-center overflow-hidden py-0 border-t border-luxury-gold/5">
+      <div className="absolute inset-0 z-0 bg-black pointer-events-none">
+         <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/YUdl2liHMPA?si=bKp8hy50_3wKmcro&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=YUdl2liHMPA" 
+            title="The Couture Collection Video" 
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            className="absolute inset-0 w-full h-full object-cover scale-[1.15] opacity-60"
+         />
+         <div className="absolute inset-0 bg-gradient-to-r from-luxury-black/90 via-luxury-black/70 to-transparent pointer-events-none" />
+         <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/95 via-transparent to-transparent pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-[1300px] mx-auto px-6 w-full">
@@ -46,11 +46,9 @@ export const ExperienceSection = ({ data }: ExperienceSectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2, duration: 1 }}
-            className="text-4xl md:text-[3.2rem] font-display mb-8 font-light leading-[1.3] italic"
+            className="text-4xl md:text-[3.2rem] font-display mb-8 font-light leading-[1.3]"
           >
-            {headline.split(' ').map((word, i) => (
-              word === 'Unforgettable' ? <span key={i} className="text-luxury-gold">{word} </span> : word + ' '
-            ))}
+            A <em className="italic text-luxury-gold bg-transparent font-light">Tapestry</em> of Elegance and Exclusivity.
           </motion.h2>
           
           <motion.p 
@@ -58,7 +56,7 @@ export const ExperienceSection = ({ data }: ExperienceSectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.4, duration: 1 }}
-            className="text-base text-luxury-muted font-light leading-[1.9] max-w-[480px] mb-10"
+            className="text-base text-luxury-cream/80 font-light leading-[1.9] max-w-[480px] mb-10"
           >
             {subtext}
           </motion.p>
@@ -69,7 +67,7 @@ export const ExperienceSection = ({ data }: ExperienceSectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="inline-block bg-luxury-gold text-luxury-black px-11 py-4 font-sans text-xs font-bold tracking-[0.2em] uppercase transition-all hover:-translate-y-0.5 hover:bg-luxury-gold-light"
+            className="inline-block bg-transparent border border-luxury-gold text-luxury-gold px-11 py-4 font-sans text-xs font-bold tracking-[0.2em] uppercase transition-all hover:-translate-y-0.5 hover:bg-luxury-gold hover:text-black"
           >
             Continue the Journey
           </motion.a>

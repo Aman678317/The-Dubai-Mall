@@ -61,7 +61,7 @@ export const CallToActionSection = () => {
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="text-[10px] uppercase tracking-[0.45em] text-luxury-gold mb-6 font-bold"
           >
-            ◈ Join the Narrative ◈
+            ◈ The Next Step ◈
           </motion.p>
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
@@ -70,7 +70,7 @@ export const CallToActionSection = () => {
             transition={{ duration: 1, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="text-5xl md:text-7xl font-display mb-8 font-light leading-[1.1]"
           >
-            Begin Your <em className="italic text-luxury-gold bg-transparent">Legacy</em>
+            Be Part of the World’s <em className="italic text-luxury-gold bg-transparent">Most Visited</em> Destination
           </motion.h2>
           
           <motion.p 
@@ -80,18 +80,13 @@ export const CallToActionSection = () => {
             transition={{ duration: 1, delay: 0.3 }}
             className="text-[1.1rem] text-luxury-muted font-light mb-12 max-w-xl leading-[1.8]"
           >
-            Position your brand at the epicenter of global influence. Our commercial team is ready to discuss your strategic integration into the Dubai Mall ecosystem.
+            Whether it's retail presence, strategic sponsorship, or landmark events, our commercial team is ready to securely integrate your brand into our elite global ecosystem.
           </motion.p>
 
-          <div className="flex gap-8">
-            <div className="text-left">
-              <div className="text-2xl font-display text-luxury-gold">105M+</div>
-              <div className="text-[10px] uppercase tracking-widest text-luxury-muted">Annual Global Reach</div>
-            </div>
-            <div className="text-left">
-              <div className="text-2xl font-display text-luxury-gold">1,200+</div>
-              <div className="text-[10px] uppercase tracking-widest text-luxury-muted">Premier Partners</div>
-            </div>
+          <div className="flex flex-wrap gap-4 mt-8">
+             <button className="px-8 py-4 bg-luxury-gold text-luxury-black font-sans font-bold uppercase tracking-[0.15em] text-[0.7rem] hover:bg-luxury-gold-light transition-all">Start Leasing</button>
+             <button className="px-8 py-4 bg-transparent border border-white/20 text-white font-sans font-bold uppercase tracking-[0.15em] text-[0.7rem] hover:border-luxury-gold transition-all">Contact Us</button>
+             <button className="px-8 py-4 bg-transparent border border-white/20 text-white font-sans font-bold uppercase tracking-[0.15em] text-[0.7rem] hover:border-luxury-gold transition-all">Download Deck</button>
           </div>
         </div>
 
